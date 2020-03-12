@@ -52,9 +52,11 @@ namespace OnlineLibrary.Controllers
             {
                 db.UsersTables.Add(usersTable);
                 db.SaveChanges();
+                
                 return RedirectToAction("Index","Home");
-            }
 
+            }
+            
             return View(usersTable);
         }
 

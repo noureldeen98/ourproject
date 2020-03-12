@@ -17,12 +17,17 @@ namespace OnlineLibrary.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View(db.UsersTables.ToList());
+            if (Session["username"] != null)
+                return View(db.UsersTables.ToList());
+            else
+                return RedirectToAction("login", "Login");
         }
 
         // GET: Admin/Details/5
         public ActionResult Details(int? id)
         {
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,7 +43,10 @@ namespace OnlineLibrary.Controllers
         // GET: Admin/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["username"] != null)
+                return View(db.UsersTables.ToList());
+            else
+                return RedirectToAction("login", "Login");
         }
 
         // POST: Admin/Create
@@ -92,6 +100,7 @@ namespace OnlineLibrary.Controllers
         // GET: Admin/Delete/5
         public ActionResult Delete(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
