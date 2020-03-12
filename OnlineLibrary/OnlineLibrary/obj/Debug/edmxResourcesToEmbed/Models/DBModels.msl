@@ -4,12 +4,12 @@
     <EntitySetMapping Name="UsersTables">
       <EntityTypeMapping TypeName="ProjectDBModel.UsersTable">
         <MappingFragment StoreEntitySet="UsersTable">
+          <ScalarProperty Name="Age" ColumnName="Age" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

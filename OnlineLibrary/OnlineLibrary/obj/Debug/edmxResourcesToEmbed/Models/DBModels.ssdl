@@ -9,7 +9,7 @@
     <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PhoneNo" Type="varchar" MaxLength="14" Nullable="false" />
-    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" StoreGeneratedPattern="None" />
   </EntityType>
   <EntityContainer Name="ProjectDBModelStoreContainer">
     <EntitySet Name="UsersTable" EntityType="Self.UsersTable" Schema="dbo" store:Type="Tables" />

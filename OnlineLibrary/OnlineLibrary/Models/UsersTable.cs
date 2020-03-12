@@ -13,15 +13,12 @@ namespace OnlineLibrary.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-
-
     
     public partial class UsersTable
     {
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "This field is required")]
-        [StringLength(15, MinimumLength = 4, ErrorMessage = "please enter from 4 to 15 chracters")]
+        [Required(ErrorMessage ="This field is required")]
+        [StringLength(8 , MinimumLength = 4 ,ErrorMessage ="please enter from 5 to 7 chracters ")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
@@ -33,13 +30,10 @@ namespace OnlineLibrary.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
-        [StringLength(11, ErrorMessage = "please enter exactly 11 numbers")]
+        [StringLength(11,MinimumLength =11,ErrorMessage ="please enter 11 numbers")]
         public string PhoneNo { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
-        
         public int Age { get; set; }
-
-
     }
 }

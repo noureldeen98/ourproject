@@ -14,7 +14,7 @@
           <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PhoneNo" Type="varchar" MaxLength="14" Nullable="false" />
-          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" StoreGeneratedPattern="None" />
         </EntityType>
         <EntityContainer Name="ProjectDBModelStoreContainer">
           <EntitySet Name="UsersTable" EntityType="Self.UsersTable" Schema="dbo" store:Type="Tables" />
@@ -33,7 +33,7 @@
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PhoneNo" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Age" Nullable="false" Type="Int32" />
         </EntityType>
         <EntityContainer Name="ModelDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UsersTables" EntityType="Self.UsersTable" />
@@ -47,12 +47,12 @@
           <EntitySetMapping Name="UsersTables">
             <EntityTypeMapping TypeName="ProjectDBModel.UsersTable">
               <MappingFragment StoreEntitySet="UsersTable">
+                <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

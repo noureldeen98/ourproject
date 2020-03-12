@@ -126,6 +126,7 @@ namespace OnlineLibrary.Controllers
 
         public ActionResult login()
         {
+            Session["username"] = null;
             return View();
         }
 
@@ -135,15 +136,22 @@ namespace OnlineLibrary.Controllers
         {
             var rec = db.UsersTables.Where(x => x.Username == usersTable.Username && x.Password == usersTable.Password && x.Email==usersTable.Email).ToList().FirstOrDefault();
             
-                if (rec != null)
+                if (rec != null && rec.Email=="user")
                 {
                     Session["username"] = rec.Username;
                     return RedirectToAction("Index", "Home");// el mfrood hna el access bta3 el sf7a ally hyro7 liha el user b3d login 
 
                 }
 
+            else if (rec != null && rec.Email == "1")
+            {
+                Session["username"] = rec.Username;
+                return RedirectToAction("Index", "Admin"); 
 
-                else
+            }
+
+
+            else
                 {
                     ViewBag.ErrorMessage = "This is invalide user";
                     return View("login");
