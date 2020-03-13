@@ -18,7 +18,7 @@ namespace OnlineLibrary.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage ="This field is required")]
-        [StringLength(8 , MinimumLength = 4 ,ErrorMessage ="please enter from 5 to 7 chracters ")]
+        [StringLength(8 , MinimumLength = 4 ,ErrorMessage ="please enter from 5 to 9 chracters ")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
