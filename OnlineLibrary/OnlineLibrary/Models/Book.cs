@@ -19,7 +19,8 @@ namespace OnlineLibrary.Models
         public string Bauthor { get; set; }
         public Nullable<int> Bprice { get; set; }
         public Nullable<int> no_of_books { get; set; }
-        public string subject_code { get; set; }
-        public Nullable<int> category_id { get; set; }
+        public int catagry_Id { get; set; }
+    
+        public virtual catagry catagry { get; set; }
     }
 }
