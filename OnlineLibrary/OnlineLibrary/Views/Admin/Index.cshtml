@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OnlineLibrary.Models.UsersTable>
+﻿@model IEnumerable<OnlineLibrary.Models.Book>
 
 @{
     ViewBag.Title = "Index";
@@ -7,24 +7,30 @@
 <h2>Index</h2>
 
 <p>
-    <span class="glyphicon glyphicon-plus">
-    @Html.ActionLink("Create New", "Create",null,new { @class = "  btn btn-info " })
-          </span>
+    
+    @Html.ActionLink("Create New", "Create")
+         
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Username)
+            @Html.DisplayNameFor(model => model.BId)
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Bname)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNo)
+            @Html.DisplayNameFor(model => model.Bauthor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Age)
+            @Html.DisplayNameFor(model => model.Bprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_of_books)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catagry_Id)
         </th>
         <th></th>
     </tr>
@@ -32,22 +38,28 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Username)
+            @Html.DisplayFor(modelItem=> item.BId)
         </td>
 
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            @Html.DisplayFor(modelItem=> item.Bname)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PhoneNo)
+            @Html.DisplayFor(modelItem=> item.Bauthor)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Age)
+            @Html.DisplayFor(modelItem=> item.Bprice)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new {@class ="btn btn-danger" })
+            @Html.DisplayFor(modelItem=> item.no_of_books)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=> item.catagry_Id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.BId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BId })
         </td>
     </tr>
 }
