@@ -1,4 +1,4 @@
-﻿@model OnlineLibrary.Models.Book
+﻿@model OnlineLibrary.Models.UsersTable
 
 @{
     ViewBag.Title = "Details";
@@ -7,61 +7,54 @@
 <h2>Details</h2>
 
 <div>
-  
+    <h4>UsersTable</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.BId)
+            @Html.DisplayNameFor(model => model.Username)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BId)
+            @Html.DisplayFor(model => model.Username)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bname)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Bname)
+            @Html.DisplayFor(model => model.Password)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bauthor)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Bauthor)
+            @Html.DisplayFor(model => model.Email)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Bprice)
+            @Html.DisplayNameFor(model => model.PhoneNo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Bprice)
+            @Html.DisplayFor(model => model.PhoneNo)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.no_of_books)
+            @Html.DisplayNameFor(model => model.Age)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.no_of_books)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.catagry_Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.catagry_Id)
+            @Html.DisplayFor(model => model.Age)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new {@class= "btn btn-regular" }) |
+    @Html.ActionLink("Back to List", "Index",null,new {@class= "btn btn-info" })
 </p>
 
 

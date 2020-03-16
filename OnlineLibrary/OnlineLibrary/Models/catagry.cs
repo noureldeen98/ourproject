@@ -20,7 +20,7 @@ namespace OnlineLibrary.Models
             this.Books = new HashSet<Book>();
         }
     
-        public int cat_Id { get; set; }
+        public int catagry_Id { get; set; }
         public string catagry_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
