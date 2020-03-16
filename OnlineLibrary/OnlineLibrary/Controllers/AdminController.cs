@@ -12,12 +12,15 @@ namespace OnlineLibrary.Controllers
 {
     public class AdminController : Controller
     {
-        private ProjectDBEntities5 db = new ProjectDBEntities5();
+        private ModelDBEntities db = new ModelDBEntities();
 
         // GET: Admin
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            if (Session["username"] != null)
+                return View(db.UsersTables.ToList());
+            else
+                return RedirectToAction("login", "Login");
         }
 
         // GET: Admin/Details/5
@@ -29,18 +32,21 @@ namespace OnlineLibrary.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           Book book = db.Books.Find(id);
-            if (book == null)
+            UsersTable usersTable = db.UsersTables.Find(id);
+            if (usersTable == null)
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View(usersTable);
         }
 
         // GET: Admin/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["username"] != null)
+                return View(db.UsersTables.ToList());
+            else
+                return RedirectToAction("login", "Login");
         }
 
         // POST: Admin/Create
@@ -48,17 +54,16 @@ namespace OnlineLibrary.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BId,Bname,Bauthor,Bprice,no_of_books,Catagry_Id")] Book book)
+        public ActionResult Create([Bind(Include = "Id,Username,Password,Email,PhoneNo,Age")] UsersTable usersTable)
         {
             if (ModelState.IsValid)
             {
-              
-                db.Books.Add(book);
+                db.UsersTables.Add(usersTable);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(book);
+            return View(usersTable);
         }
 
         // GET: Admin/Edit/5
@@ -68,12 +73,12 @@ namespace OnlineLibrary.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
-            if (book == null)
+            UsersTable usersTable = db.UsersTables.Find(id);
+            if (usersTable == null)
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View(usersTable);
         }
 
         // POST: Admin/Edit/5
@@ -81,18 +86,43 @@ namespace OnlineLibrary.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BId,Bname,Bauthor,Bprice,no_of_books,catagry_Id")] Book book)
+        public ActionResult Edit([Bind(Include = "Id,Username,Password,Email,PhoneNo,Age")] UsersTable usersTable)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
+                db.Entry(usersTable).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(book);
+            return View(usersTable);
         }
 
-     
+        // GET: Admin/Delete/5
+        public ActionResult Delete(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            UsersTable usersTable = db.UsersTables.Find(id);
+            if (usersTable == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usersTable);
+        }
+
+        // POST: Admin/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            UsersTable usersTable = db.UsersTables.Find(id);
+            db.UsersTables.Remove(usersTable);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {
