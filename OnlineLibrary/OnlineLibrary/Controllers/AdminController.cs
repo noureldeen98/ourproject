@@ -44,7 +44,7 @@ namespace OnlineLibrary.Controllers
         public ActionResult Create()
         {
             if (Session["username"] != null)
-                return View(db.UsersTables.ToList());
+                return View();
             else
                 return RedirectToAction("login", "Login");
         }
