@@ -17,7 +17,10 @@ namespace OnlineLibrary.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            if (Session["username"] != null)
+                return View(db.Books.ToList());
+            else
+                return RedirectToAction("login", "Login");
         }
 
         // GET: Admin/Details/5
