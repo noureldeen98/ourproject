@@ -89,7 +89,31 @@ namespace OnlineLibrary.Controllers
             return View(catagry);
         }
 
-       
+        // GET: catagries/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            catagry catagry = db.catagries.Find(id);
+            if (catagry == null)
+            {
+                return HttpNotFound();
+            }
+            return View(catagry);
+        }
+
+        // POST: catagries/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            catagry catagry = db.catagries.Find(id);
+            db.catagries.Remove(catagry);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {

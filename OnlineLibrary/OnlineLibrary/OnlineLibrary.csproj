@@ -269,6 +269,8 @@
     <Content Include="Views\catagries\Details.cshtml" />
     <Content Include="Views\catagries\Edit.cshtml" />
     <Content Include="Views\catagries\Index.cshtml" />
+    <Content Include="Views\catagries\Delete.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
