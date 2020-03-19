@@ -40,7 +40,10 @@
                     <span class="glyphicon glyphicon-baby-formula"></span>
                     Details
                 </a>
-                
+                <a href="@Url.Action("Delete","catagries",new { id=item.catId}) " class="btn btn-danger ">
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                    Delete
+                </a>             
 
                 @*@ @Html.ActionLink("Edit", "Edit", new { id = item.catId }) |
         @Html.ActionLink("Details", "Details", new { id = item.catId }) |
