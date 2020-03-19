@@ -90,7 +90,7 @@ namespace OnlineLibrary.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(book).State = EntityState.Modified;
-                db.SaveChanges();
+                db.SaveChanges(); 
                 return RedirectToAction("Index");
             }
             return View(book);
