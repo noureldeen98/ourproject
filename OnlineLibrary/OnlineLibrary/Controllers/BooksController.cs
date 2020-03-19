@@ -85,7 +85,7 @@ namespace OnlineLibrary.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BId,Bname,Bauthor,Bprice,no_of_books,catagry_Id")] Book book)
+        public ActionResult Edit([Bind(Include ="BId,Bname,Bauthor,Bprice,no_of_books,catagry_Id")] Book book)
         {
             if (ModelState.IsValid)
             {
