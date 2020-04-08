@@ -271,6 +271,7 @@
     <Content Include="Views\catagries\Index.cshtml" />
     <Content Include="Views\catagries\Delete.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Search.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
