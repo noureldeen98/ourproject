@@ -737,3 +737,4 @@ E:\repo2\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.C
 E:\repo2\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.dll
 E:\repo2\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.pdb
 E:\repo2\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csprojAssemblyReference.cache
+C:\Users\DELL\Github\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.CoreCompileInputs.cache

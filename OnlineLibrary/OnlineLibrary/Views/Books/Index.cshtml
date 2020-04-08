@@ -7,13 +7,18 @@
     <h1 class="glyphicon glyphicon-book">Books </h1>
 
 <p>
-
     @*@@Html.ActionLink("Create New", "Create", null , new { @class = "btn btn-info" })*@
     <a href="@Url.Action("Create","Books")" class="btn btn-primary" target="_blank">
         <span class="glyphicon glyphicon-heart"></span>
         New Book
     </a>
-
+</p>
+<p>
+    @using (Html.BeginForm("Search", "Books", FormMethod.Get))
+    {
+        <text> <b>Search:</b></text>
+        @Html.TextBox("key") <input type="submit" value="search" class="btn btn-primary" />
+    }
 </p>
 <table class="table table-striped">
     <tr>

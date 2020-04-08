@@ -120,8 +120,12 @@ namespace OnlineLibrary.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
+        public ActionResult Search(string key)
+        {
+            var listOfBooks = db.Books.Where(x => x.Bname == key).ToList();
+           // var listOfProducts = db.Products.Where(x => x.category_id == categoryID).ToList();
+            return View(listOfBooks);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
