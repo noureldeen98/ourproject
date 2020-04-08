@@ -15,6 +15,16 @@
     </a>
 
 </p>
+
+<p>
+    @using (Html.BeginForm("SearchUser", "Admin", FormMethod.Get))
+    {
+        <b>Search:</b>
+        @Html.TextBox("key")
+        <input type="submit" value="search" class="btn btn-primary" />
+    }
+</p>
+
 <table class="table table-striped">
     <tr>
         <th>

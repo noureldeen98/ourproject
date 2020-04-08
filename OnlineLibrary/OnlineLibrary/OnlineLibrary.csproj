@@ -272,6 +272,7 @@
     <Content Include="Views\catagries\Delete.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
     <Content Include="Views\Books\Search.cshtml" />
+    <Content Include="Views\Admin\SearchUser.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

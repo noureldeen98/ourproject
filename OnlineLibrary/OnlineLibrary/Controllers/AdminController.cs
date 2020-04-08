@@ -124,6 +124,24 @@ namespace OnlineLibrary.Controllers
             return RedirectToAction("Index");
         }
 
+        // the search method
+        public ActionResult SearchUser(string key)
+        {
+            var listOfUsers = db.UsersTables.Where(x => x.Username == key).ToList();
+            
+                if (Session["username"] != null)
+                {
+
+                    return View(listOfUsers);
+                }
+
+                else
+                {
+                    return RedirectToAction("login", "Login");
+                }
+            
+
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -135,3 +153,6 @@ namespace OnlineLibrary.Controllers
         }
     }
 }
+
+
+
