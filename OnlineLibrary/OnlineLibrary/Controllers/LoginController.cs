@@ -139,7 +139,7 @@ namespace OnlineLibrary.Controllers
                 if (rec != null && rec.Email=="user")
                 {
                     Session["username"] = rec.Username;
-                    return RedirectToAction("Index", "Home");// el mfrood hna el access bta3 el sf7a ally hyro7 liha el user b3d login 
+                    return RedirectToAction("Index2", "Books");// el mfrood hna el access bta3 el sf7a ally hyro7 liha el user b3d login 
 
                 }
 
@@ -159,6 +159,8 @@ namespace OnlineLibrary.Controllers
             
            
         }
+
+
 
     }
 }

@@ -820,3 +820,4 @@ E:\Third year\Second term\sw2\repos\ourproject\ourproject\OnlineLibrary\OnlineLi
 E:\Third year\Second term\sw2\repos\ourproject\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.CopyComplete
 E:\Third year\Second term\sw2\repos\ourproject\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.dll
 E:\Third year\Second term\sw2\repos\ourproject\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.pdb
+E:\Third year\Second term\sw2\repos\ourproject\ourproject\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.CoreCompileInputs.cache

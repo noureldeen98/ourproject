@@ -23,6 +23,14 @@ namespace OnlineLibrary.Controllers
                 return RedirectToAction("login", "Login");
         }
 
+        public ActionResult Index2()
+        {
+            if (Session["username"] != null)
+                return View(db.Books.ToList());
+            else
+                return RedirectToAction("login", "Login");
+        }
+
         // GET: Admin/Details/5
         public ActionResult Details(int? id)
         {
@@ -134,5 +142,7 @@ namespace OnlineLibrary.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }
