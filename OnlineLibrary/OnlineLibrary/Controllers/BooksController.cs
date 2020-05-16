@@ -142,6 +142,16 @@ namespace OnlineLibrary.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Borrow(int id)
+        {
+            Book book = db.Books.Find(id);
+            int count_of_books = book.no_of_books.Value;
+            book.no_of_books = count_of_books - 1;
+            db.Entry(book).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+
+        }
 
 
     }
