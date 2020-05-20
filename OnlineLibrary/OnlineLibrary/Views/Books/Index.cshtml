@@ -14,7 +14,7 @@
     </a>
 </p>
 <p>
-    @using (Html.BeginForm("Search", "Books", FormMethod.Get))
+    @using (Html.BeginForm("Search_ByAdmin", "Books", FormMethod.Get))
     {
         <text> <b>Search:</b></text>
         @Html.TextBox("key") <input type="submit" value="search" class="btn btn-primary" />

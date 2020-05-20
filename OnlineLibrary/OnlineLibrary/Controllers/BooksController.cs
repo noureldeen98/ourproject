@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -134,6 +135,15 @@ namespace OnlineLibrary.Controllers
            // var listOfProducts = db.Products.Where(x => x.category_id == categoryID).ToList();
             return View(listOfBooks);
         }
+
+        public ActionResult Search_ByAdmin(string key)
+        {
+            var listOfBooks = db.Books.Where(x => x.Bname == key).ToList();
+            // var listOfProducts = db.Products.Where(x => x.category_id == categoryID).ToList();
+
+            return View(listOfBooks);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -142,6 +152,7 @@ namespace OnlineLibrary.Controllers
             }
             base.Dispose(disposing);
         }
+
         public ActionResult Borrow(int id)
         {
             Book book = db.Books.Find(id);
@@ -150,7 +161,6 @@ namespace OnlineLibrary.Controllers
             db.Entry(book).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index2");
-
         }
 
 
