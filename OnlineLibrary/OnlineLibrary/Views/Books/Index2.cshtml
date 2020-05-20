@@ -60,7 +60,11 @@
             </td>
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.BId })*@
-                <a class="btn btn-success" href="@Url.Action("Borrow","Books",new {id=item.BId })">Borrow</a>
+
+                <a class="btn btn-success" href="@Url.Action("Borrow","Books", new {id=item.BId })">Borrow</a>
+
+               
+
 
             </td>
         </tr>
@@ -68,6 +72,8 @@
 
 
 </table>
+
+
 
 <p>
 

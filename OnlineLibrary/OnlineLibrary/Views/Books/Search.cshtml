@@ -63,18 +63,8 @@
                 @Html.DisplayFor(modelItem => item.catagry_Id)
             </td>
             <td>
-                <a href="@Url.Action("Edit","Books",new { id=item.BId}) " class="btn btn-success ">
-                    <span class="glyphicon glyphicon-arrow-up"></span>
-                    Edit
-                </a> |
-                <a href="@Url.Action("Details","Books",new { id=item.BId}) " class="btn btn-toolbar ">
-                    <span class="glyphicon glyphicon-baby-formula"></span>
-                    Details
-                </a>
-                <a href="@Url.Action("Delete","Books",new { id=item.BId}) " class="btn btn-danger ">
-                    <span class="glyphicon glyphicon-arrow-down"></span>
-                    Delete
-                </a>
+ 
+                <a class="btn btn-success" href="@Url.Action("Borrow","Books", new {id=item.BId })">Borrow</a>
             </td>
         </tr>
     }
